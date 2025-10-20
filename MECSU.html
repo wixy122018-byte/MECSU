@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MECSU - Mecánica Automotriz e Industrial</title>
+  <style>
+    :root{
+      --primary:#003366;--secondary:#0059b3;--accent:#ff9933;--light:#f9fafc;--gray:#e3e6eb;--text:#1a1a1a;--radius:14px;
+      font-family:'Segoe UI',Roboto,Arial,sans-serif;
+    }
+    body{margin:0;background:linear-gradient(180deg,var(--light),var(--gray));color:var(--text);line-height:1.6;}
+    header{background:linear-gradient(90deg,var(--primary),var(--secondary));color:white;padding:16px 0;box-shadow:0 3px 10px rgba(0,0,0,0.2);}
+    .container{max-width:1200px;margin:auto;padding:0 20px;}
+    .brand{display:flex;align-items:center;gap:12px;}
+    .logo{width:55px;height:55px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffd699);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;color:var(--primary);}
+    nav{display:flex;gap:18px;align-items:center;}
+    nav a{color:white;text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;transition:0.3s;}
+    nav a:hover{background:rgba(255,153,51,0.15);}
+    .tab-menu{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;background:#fff;padding:12px;border-bottom:4px solid var(--secondary);}
+    .tab-menu button{background:var(--gray);border:none;padding:10px 20px;border-radius:8px;font-weight:600;color:var(--primary);cursor:pointer;transition:0.3s;}
+    .tab-menu button:hover,.tab-menu button.active{background:var(--primary);color:white;}
+    section{display:none;padding:40px 20px;animation:fadeIn .5s ease;}
+    section.active{display:block;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+    h1,h2,h3{color:var(--primary);}h1{font-size:2rem;margin-bottom:10px;}
+    .card{background:white;border-radius:var(--radius);padding:24px;box-shadow:0 4px 12px rgba(0,0,0,0.08);margin-bottom:14px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px;}
+    .feature{display:flex;gap:10px;align-items:flex-start;}
+    .feature img{width:45px;height:45px;}
+    .gallery{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:20px;}
+    .gallery img{width:calc(33% - 10px);border-radius:10px;object-fit:cover;box-shadow:0 3px 8px rgba(0,0,0,0.1);}
+    table{width:100%;border-collapse:collapse;margin-top:20px;}
+    th,td{border:1px solid var(--gray);padding:10px;text-align:center;}
+    th{background:var(--primary);color:white;}
+    footer{background:linear-gradient(90deg,var(--primary),var(--secondary));color:white;text-align:center;padding:16px;margin-top:40px;}
+    .accent{color:var(--accent);}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+    <div class="brand">
+      <div class="logo">M</div>
+      <div>
+        <div style="font-weight:800;font-size:22px;">MECSU</div>
+        <div style="font-size:13px;">Mecánica Automotriz e Industrial</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#" onclick="openTab(event,'inicio')">Inicio</a>
+      <a href="#" onclick="openTab(event,'auto')">Mecánica Automotriz</a>
+      <a href="#" onclick="openTab(event,'industrial')">Mecánica Industrial</a>
+      <a href="#" onclick="openTab(event,'galeria')">Galería</a>
+      <a href="#" onclick="openTab(event,'historia')">Historia</a>
+      <a href="#" onclick="openTab(event,'cita')">Contacto</a>
+      <a href="#" onclick="openTab(event,'disponibles')">Citas Disponibles</a>
+    </nav>
+  </div>
+</header>
+<div class="tab-menu">
+  <button class="active" onclick="openTab(event,'inicio')">Inicio</button>
+  <button onclick="openTab(event,'auto')">Mecánica Automotriz</button>
+  <button onclick="openTab(event,'industrial')">Mecánica Industrial</button>
+  <button onclick="openTab(event,'galeria')">Galería</button>
+  <button onclick="openTab(event,'historia')">Historia</button>
+  <button onclick="openTab(event,'cita')">Contacto</button>
+  <button onclick="openTab(event,'disponibles')">Citas Disponibles</button>
+</div>
+<main class="container">
+<section id="inicio" class="active">
+  <h1>MECSU — Confianza, Tecnología y Precisión</h1>
+  <p>En <span class="accent">MECSU</span> unimos la experiencia técnica con la innovación para ofrecer soluciones integrales en mecánica automotriz e industrial. Nuestro objetivo es garantizar el máximo rendimiento y durabilidad de sus equipos, respaldados por procesos certificados y un equipo comprometido.</p>
+</section>
+<section id="auto">
+  <h2>Mecánica Automotriz</h2>
+  <p>Desde diagnósticos electrónicos hasta mantenimiento avanzado, cubrimos todo tipo de sistemas: frenos, transmisión, suspensiones, sistemas híbridos y eléctricos.</p>
+</section>
+<section id="industrial">
+  <h2>Mecánica Industrial</h2>
+  <p>Especialistas en mecanizado, mantenimiento y fabricación de componentes metálicos en acero, aluminio, bronce e inoxidable.</p>
+</section>
+<section id="galeria">
+  <h2>Galería</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=1200&q=80" alt="Técnico trabajando en taller automotriz">
+    <img src="https://images.unsplash.com/photo-1605129497038-51a25e2c9c19?auto=format&fit=crop&w=1200&q=80" alt="Ingeniero calibrando maquinaria industrial">
+    <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=1200&q=80" alt="Equipo de mecánicos revisando motor">
+    <img src="https://images.unsplash.com/photo-1630670444009-1a9309cdb855?auto=format&fit=crop&w=1200&q=80" alt="Mecanizado de piezas de precisión">
+  </div>
+</section>
+<section id="historia">
+  <h2>Nuestra Historia</h2>
+  <p>MECSU nació de la pasión por la ingeniería aplicada y la necesidad de ofrecer servicios confiables, eficientes y modernos. Su fundador, el Ing. Juan Martínez, combinó su experiencia en mecanizado industrial y diagnóstico automotriz para crear una empresa basada en la precisión y la confianza.</p>
+</section>
+<section id="cita">
+  <h2>Contacto</h2>
+  <p>Tel: +593 9 9999 9999 | Email: contacto@mecsu.ec | Horario: Lunes a Viernes 08:00 – 18:00</p>
+</section>
+<section id="disponibles">
+  <h2>Citas Disponibles</h2>
+  <p>Consulta las fechas, horarios y técnicos disponibles para agendar tu mantenimiento o reparación.</p>
+  <table>
+    <tr><th>Fecha</th><th>Horario</th><th>Área</th><th>Atiende</th><th>Lugar</th></tr>
+    <tr><td>21/10/2025</td><td>09:00 - 10:30</td><td>Mecánica Automotriz</td><td>Téc. Luis Herrera</td><td>Taller Central Quito</td></tr>
+    <tr><td>21/10/2025</td><td>11:00 - 12:30</td><td>Mecánica Industrial</td><td>Ing. Paula Gómez</td><td>Planta Norte</td></tr>
+    <tr><td>22/10/2025</td><td>14:00 - 15:30</td><td>Diagnóstico Electrónico</td><td>Téc. Jorge Medina</td><td>Taller Central Quito</td></tr>
+    <tr><td>22/10/2025</td><td>16:00 - 17:30</td><td>Mecanizado CNC</td><td>Ing. Camila López</td><td>Área de Producción Sur</td></tr>
+  </table>
+</section>
+</main>
+<footer>© 2025 MECSU · Ingeniería y Mecánica de Confianza</footer>
+<script>
+function openTab(e,id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab-menu button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  e.currentTarget.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
